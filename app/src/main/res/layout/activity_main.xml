@@ -4,28 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#009688"
+    android:background="@drawable/taskbbbbbbbb"
     android:outlineAmbientShadowColor="#009688"
     android:outlineSpotShadowColor="#009688"
-    tools:context=".MainActivity">
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="178dp"
-        android:layout_height="133dp"
-        android:background="#009688"
-        android:backgroundTint="#BF1212"
-        android:outlineAmbientShadowColor="#009688"
-        android:outlineSpotShadowColor="#009688"
-        android:shadowColor="#009688"
-        android:text="HallaShuli"
-        android:textColor="#009688"
-        android:textColorHighlight="#009688"
-        android:textColorHint="#009688"
-        android:textColorLink="#009688"
-        app:iconTint="#009688"
-        app:rippleColor="#009688"
-        app:strokeColor="#009688"
-        tools:layout_editor_absoluteX="75dp"
-        tools:layout_editor_absoluteY="16dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    tools:context=".MainActivity" />
