@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Mainact2 extends AppCompatActivity {
+public class MainActivitysingin extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mainact2);
+        setContentView(R.layout.activity_main_activitysingin);
     }
 }
