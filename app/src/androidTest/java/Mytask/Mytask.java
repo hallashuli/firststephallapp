@@ -1,5 +1,4 @@
 package Mytask;
-
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 @Entity
@@ -19,7 +18,7 @@ public class Mytask
     /*** زمن بناء المهمة*/
     public long time;
 // gitter
-    public String getKoyld() {
+    public  long getKoyld() {
         return koyld;
     }
     public String getText() {
@@ -38,7 +37,7 @@ public class Mytask
         return time;
     }
 // setter
-    public void setKoyld(String koyld) {
+    public void setKoyld(long koyld) {
         this.koyld = koyld;
     }
     public void setText(String text) {
