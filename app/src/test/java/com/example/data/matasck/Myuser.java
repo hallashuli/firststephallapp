@@ -6,7 +6,7 @@ import androidx.room.ColumnInfo;
 // جدول
 //عندما نريد ان نتعامل مع هذه الفئة كجدول معطيات
 @Entity
-public class newuser
+public class Myuser
 {
     @PrimaryKey(autoGenerate = true) //والذي ينتج بشكل تلقائي تحديد الصفة كمفتاح رئيسي
     public long keyid;

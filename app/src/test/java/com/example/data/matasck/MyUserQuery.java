@@ -6,42 +6,36 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import java.util.List;
+
 /**
  * الواجهة تحتوي استعلامات على قاعدة البيانات
  */
-public interface myuserc
-{
+
 @Dao
-    public interface MyUserQuery
+public interface MyUserQuery
     {
                 @Query("SELECT * FROM MyUser")
-                List<MyUser> getAll();
+                List<Myuser> getAll();
 
                 @Query("SELECT * FROM MyUser WHERE keyid IN (:userIds)")
-                List<MyUser> loadAllByIds(int[] userIds);
+                List<Myuser> loadAllByIds(int[] userIds);
 
                 @Query("SELECT * FROM MyUser WHERE email = :myEmail AND " +
                         "passw = :myPassw LIMIT 1")
-                MyUser checkEmailPassw(String myEmail, String myPassw);
+                Myuser checkEmailPassw(String myEmail, String myPassw);
 
                 @Insert
-                void insertAll(MyUser... users);
+                void insertAll(Myuser... users);
 
                 @Delete
-                void delete(MyUser user);
+                void delete(Myuser user);
 
-                @Query("Delete From MySubject WHERE keyid=:id ")
+                @Query("Delete From Myuser WHERE keyid=:id ")
                 void delete(int id);
 
                 @Insert
-                void insert(MyUser myUser);
+                void insert(Myuser myUser);
                 @Update
-                void update(MyUser...values);
+                void update(Myuser...values);
             }
-
-        }
-
-    }
-
-
-}
