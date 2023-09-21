@@ -17,6 +17,8 @@ public class Mytask
     public long userid;
     /*** زمن بناء المهمة*/
     public long time;
+    /**يفحص اذا انهى المهمة */
+    public boolean isCompleted;
 // gitter
     public  long getKoyld() {
         return koyld;
@@ -36,7 +38,12 @@ public class Mytask
     public long getTime() {
         return time;
     }
-// setter
+
+    public boolean isCompleted() {
+        return isCompleted;
+    }
+
+    // setter
     public void setKoyld(long koyld) {
         this.koyld = koyld;
     }
@@ -55,16 +62,21 @@ public class Mytask
     public void setTime(long time) {
         this.time = time;
     }
+
+    public void setCompleted(boolean completed) {
+        isCompleted = completed;
+    }
+
     @Override
-    public String toString()
-    {
+    public String toString() {
         return "Mytask{" +
-                "koyld='" + koyld + '\'' +
+                "koyld=" + koyld +
                 ", text='" + text + '\'' +
                 ", inportance=" + inportance +
                 ", subjid=" + subjid +
                 ", userid=" + userid +
                 ", time=" + time +
+                ", isCompleted=" + isCompleted +
                 '}';
     }
 }
