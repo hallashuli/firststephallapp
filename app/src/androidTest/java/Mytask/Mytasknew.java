@@ -29,4 +29,3 @@ public interface Mytasknew
     @Query("DELETE FROM mytask WHERE koyld")
     void deletTask(long Kid);
 }
-
