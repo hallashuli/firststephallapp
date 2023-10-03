@@ -1,4 +1,4 @@
-package Mytask;
+package com.example.data.matasck;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;

@@ -1,4 +1,4 @@
-package Mytask;
+package com.example.data.matasck;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 @Entity

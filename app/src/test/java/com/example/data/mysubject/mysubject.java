@@ -1,4 +1,4 @@
-package Msubject;
+package com.example.data.mysubject;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
