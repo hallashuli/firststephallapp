@@ -1,4 +1,4 @@
-package com.example.data.myuser;
+package com.example.firststephallapp.data.myuser;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

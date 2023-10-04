@@ -1,4 +1,4 @@
-package com.example.data.mysubject;
+package com.example.firststephallapp.data.mysubject;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;

@@ -1,12 +1,10 @@
-package com.example.data.myuser;
+package com.example.firststephallapp.data.myuser;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
-
-import com.example.data.myuser.Myuser;
 
 import java.util.List;
 
