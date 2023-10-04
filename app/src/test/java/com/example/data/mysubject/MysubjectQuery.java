@@ -7,7 +7,7 @@ import androidx.room.Update;
 import java.util.List;
 
 @Dao
-public interface Mysubjectqquery
+public interface MysubjectQuery
 {
     @Query("SELECT* FROM mysubject")
     List<Mysubject> getAllsubjects();
