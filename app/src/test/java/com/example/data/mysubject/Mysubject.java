@@ -3,7 +3,7 @@ package com.example.data.mysubject;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 @Entity
-public class mysubject
+public class Mysubject
 {
     @PrimaryKey(autoGenerate = true)
     public long keyid;

@@ -10,18 +10,18 @@ import java.util.List;
 public interface Mysubjectqquery
 {
     @Query("SELECT* FROM mysubject")
-    List<mysubject> getAllsubjects();
+    List<Mysubject> getAllsubjects();
 
 
     /***ادخال مجموعة من مهمات **/
     @Insert
-    void insertsubject(mysubject... s); // القاط يمكن ادخال كائن او مجموعة
+    void insertsubject(Mysubject... s); // القاط يمكن ادخال كائن او مجموعة
     /*** تعديل المهمات حسب المفتاح الرئيسي*/
     @Update
-    void updatesubject(mysubject subject);
+    void updatesubject(Mysubject subject);
     /**** ذف مهمة او مهمات حسب المفتاح الرئيسي*/
     @Delete
-    void deletsubject(mysubject... subject);
+    void deletsubject(Mysubject... subject);
     /** */
     @Query("DELETE FROM mysubject WHERE keyid")
     void deletsubject(long Kid);
