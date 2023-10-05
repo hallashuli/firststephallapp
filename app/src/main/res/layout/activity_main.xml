@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="8dp"
     android:background="@drawable/taskbbbbbbbb"
     android:outlineAmbientShadowColor="#009688"
     android:outlineSpotShadowColor="#009688"
@@ -16,14 +17,10 @@
         android:layout_marginBottom="893dp"
         app:layout_constraintBottom_toTopOf="@+id/button5"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="WELCOME TO MY APP"
-            android:textSize="60sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -37,8 +34,18 @@
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintHorizontal_bias="0.554"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="394dp"
+        android:layout_height="167dp"
+        android:hint="WELCOME TO MY APP"
+        android:textColor="#009688"
+        android:textColorHint="#171515"
+        android:textSize="60sp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="-6dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
