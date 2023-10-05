@@ -23,6 +23,6 @@ public interface MysubjectQuery
     @Delete
     void deletsubject(Mysubject... subject);
     /** */
-    @Query("DELETE FROM mysubject WHERE keyid")
+    @Query("DELETE FROM mysubject WHERE keyid=:Kid")
     void deletsubject(long Kid);
 }

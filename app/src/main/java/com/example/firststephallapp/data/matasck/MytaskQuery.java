@@ -24,7 +24,7 @@ public interface MytaskQuery {
     /**** ذف مهمة او مهمات حسب المفتاح الرئيسي*/
     @Delete
     void deletTask(Mytask... task);
-    @Query("DELETE FROM mytask WHERE koyld")
+    @Query("DELETE FROM mytask WHERE koyld=:Kid")
     void deletTask(long Kid);
 
 }
