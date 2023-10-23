@@ -10,49 +10,33 @@
     android:outlineSpotShadowColor="#009688"
     tools:context=".MainActivity">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
-        android:layout_width="0dp"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabadd"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="893dp"
-        app:layout_constraintBottom_toTopOf="@+id/button5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_alignParentEnd="true"
+        android:clickable="true"
+        app:srcCompat="@android:drawable/btn_plus" />
 
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="128dp"
-        android:layout_height="127dp"
-        android:layout_marginBottom="16dp"
-        android:shadowColor="#00BCD4"
-        android:text="GO"
-        android:textColor="@color/black"
-        android:textSize="48sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.554"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:layout_width="394dp"
-        android:layout_height="167dp"
-        android:hint="WELCOME TO MY APP"
-        android:textColor="#009688"
-        android:textColorHint="#171515"
-        android:textSize="60sp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="-6dp" />
-
-    <Spinner
-        android:id="@+id/spnrSubject"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="197dp" />
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
+        <SearchView
+            android:id="@+id/srchv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+            android:id="@+id/spnrSubject"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1" />
+
+        <ListView
+            android:id="@+id/IstvTasks"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 </RelativeLayout>
