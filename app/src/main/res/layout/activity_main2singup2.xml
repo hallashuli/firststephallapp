@@ -14,12 +14,26 @@
         tools:layout_editor_absoluteY="-62dp">
 
 
-        <Button
-            android:id="@+id/btnSave"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_margin="8dp"
-            android:text="SAVE" />
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="SAVE" />
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="cancel" />
+
+        </LinearLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -80,5 +94,6 @@
                 android:layout_margin="8dp"
                 android:hint="phone" />
         </com.google.android.material.textfield.TextInputLayout>
+
     </LinearLayout>
 </RelativeLayout>
