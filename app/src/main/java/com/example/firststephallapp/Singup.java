@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class Main2singup2Activity extends AppCompatActivity
+public class Singup extends AppCompatActivity
 {
     private Button btnSave;
     private EditText etEmail;
@@ -17,6 +17,6 @@ public class Main2singup2Activity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2singup2);
+        setContentView(R.layout.activity_singup);
     }
 }

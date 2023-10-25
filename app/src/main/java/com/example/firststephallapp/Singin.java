@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class MainActivitysingin extends AppCompatActivity {
+public class Singin extends AppCompatActivity {
     private EditText etEmail;
     private EditText etPass;
     private Button btSignin;
@@ -14,6 +14,6 @@ public class MainActivitysingin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_activitysingin);
+        setContentView(R.layout.activity_singin);
     }
 }
