@@ -42,6 +42,7 @@
             style="@style/Widget.AppCompat.SeekBar.Discrete"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_margin="8dp"
             android:max="5"
             android:progress="1" />
 
@@ -57,21 +58,26 @@
                 android:id="@+id/etShortTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="8dp"
                 android:hint="ShortTitle" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Text" />
+                android:layout_margin="8dp"
+                android:hint="Text"
+                />
         </com.google.android.material.textfield.TextInputLayout>
-        <![CDATA[
-
-        />
-]]>
+    </LinearLayout>
+</RelativeLayout>
