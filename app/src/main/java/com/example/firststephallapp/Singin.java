@@ -12,8 +12,14 @@ public class Singin extends AppCompatActivity {
     private Button btSignin;
     private Button btSingup;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_singin);
+        //
+        etEmail=findViewById(R.id.etEmail);
+        etPass=findViewById(R.id.etPass);
+        btSignin=findViewById(R.id.btSignin);
+        btSingup=findViewById(R.id.btnSingup);
     }
 }

@@ -1,12 +1,10 @@
 package com.example.firststephallapp;
-
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.textfield.TextInputLayout;
-
 public class EditTask extends AppCompatActivity
 {
     private Button btnUpdate;
@@ -20,6 +18,14 @@ public class EditTask extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edittask);
+        //
+        btnUpdate=findViewById(R.id.btnUpdate);
+        btn3Cancel=findViewById(R.id.btn3Cancel);
+        etImportance2=findViewById(R.id.etImportance2);
+        skb2=findViewById(R.id.skb2);
+        etShortTitle2=findViewById(R.id.etShortTitle2);
+        etText2=findViewById(R.id.etText2);
+
     }
 }
 

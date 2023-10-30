@@ -1,5 +1,4 @@
 package com.example.firststephallapp;
-
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,9 +8,7 @@ import android.widget.Toast;
 import com.example.firststephallapp.data.AppDatabase;
 import com.example.firststephallapp.data.mysubject.Mysubject;
 import com.example.firststephallapp.data.mysubject.MysubjectQuery;
-
 import java.util.List;
-
 public class MainActivity extends AppCompatActivity
 {
     //spnr1 تعريف صفه للكائن المرئي
@@ -32,7 +29,6 @@ public class MainActivity extends AppCompatActivity
         adapter.addAll(ar);
         //spnr6ربط الكائن المرئي بالوسيط
         spnrSubject.setAdapter(adapter);
-
         Log.d("HL","onCreate");
         Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
         //ناء قاعدة بيانات و ارجاع مؤشر عليها
@@ -55,7 +51,6 @@ public class MainActivity extends AppCompatActivity
                  Log.d("halla",s.title);
                  Toast.makeText(this, s.title, Toast.LENGTH_SHORT).show();
         }
-
     }
     @Override
     protected void onRestart()
@@ -85,7 +80,6 @@ public class MainActivity extends AppCompatActivity
         Log.d("HL","onCreate");
         Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
     }
-
     @Override
     protected void onStop()
     {
