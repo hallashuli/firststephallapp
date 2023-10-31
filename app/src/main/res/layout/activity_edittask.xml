@@ -32,14 +32,14 @@ android:orientation="vertical">>
     </LinearLayout>
 
     <TextView
-        android:id="@+id/etImportance2"
+        android:id="@+id/etImportance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:text="importance" />
 
     <SeekBar
-        android:id="@+id/skb2"
+        android:id="@+id/skb"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="match_parent"
         android:layout_height="50dp"
