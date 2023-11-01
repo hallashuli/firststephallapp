@@ -24,14 +24,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="SAVE" />
+                android:text="SAVE"
+                app:cornerRadius="30dp" />
 
             <Button
                 android:id="@+id/btnCancel"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="cancel" />
+                android:text="cancel"
+                app:cornerRadius="30dp" />
 
         </LinearLayout>
 

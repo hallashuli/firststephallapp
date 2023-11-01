@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 public class SplashScreen  extends AppCompatActivity
 {
-    private Button btnGo;
+
     private TextView etWelcome;
         @Override
         protected void onCreate(Bundle savedInstanceState)
@@ -17,7 +17,6 @@ public class SplashScreen  extends AppCompatActivity
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_splashscreen);
             //توثيق صفات
-            btnGo=findViewById(R.id.btnGo);
             etWelcome=findViewById(R.id.etWelcome);
             //
             Handler h = new Handler();
