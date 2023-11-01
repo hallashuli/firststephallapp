@@ -6,9 +6,11 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.android.material.textfield.TextInputLayout;
+
 public class Singin extends AppCompatActivity {
-    private EditText etEmail;
-    private EditText etPass;
+    private TextInputLayout etEmail;
+    private TextInputLayout etPass;
     private Button btSignin;
     private Button btSingup;
     @Override

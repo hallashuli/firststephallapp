@@ -6,14 +6,16 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.android.material.textfield.TextInputLayout;
+
 public class Singup extends AppCompatActivity
 {
     private Button btnSave;
-    private EditText etEmail2;
-    private EditText etPassword;
-    private EditText etRepassword;
-    private EditText etName;
-    private EditText etPhone;
+    private TextInputLayout etEmail2;
+    private TextInputLayout etPassword;
+    private TextInputLayout etRepassword;
+    private TextInputLayout etName;
+    private TextInputLayout etPhone;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
