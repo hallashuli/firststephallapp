@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -27,17 +28,34 @@ public class Singin extends AppCompatActivity {
         btSignin = findViewById(R.id.btSignin);
         btSingup = findViewById(R.id.btnSingup);
     }
-    public void onClickSinginToSingup (View v)
-    {
+
+    public void onClickSinginToSingup(View v) {
         //to open new activity from current to next activity
-        Intent i= new Intent(Singin.this,  Singup.class);
+        Intent i = new Intent(Singin.this, Singup.class);
         startActivity(i);
     }
-    public void onClickSinginToMainactivity (View v)
-    {
-        //to open new activity from current to next activity
-        Intent i= new Intent(Singin.this, MainActivity.class);
-        startActivity(i);
+
+    public void onClickSinginToMainactivity(View v) {
+        ckeckEmailPassw();
+
+    }
+
+    private void ckeckEmailPassw() {
+        boolean isAllok = true;
+        String email = etEmail.getText().toString();
+        String password=etPass.getText().toString();
+        if (email.length()<6 || email.contains("@")==false) {
+            isAllok = false;
+            etEmail.setError("worng email");
+        }
+        if (password.length()<8 || password.contains(" ")==true){
+            isAllok=false;
+            etPass.setError("worng password");
+        }
+        if (isAllok){
+            Toast.makeText(this, "All Ok", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
 }
