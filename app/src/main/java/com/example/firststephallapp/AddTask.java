@@ -1,6 +1,8 @@
 package com.example.firststephallapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -28,4 +30,7 @@ public class AddTask extends AppCompatActivity {
         etShortTitle=findViewById(R.id.etShortTitle);
         etText=findViewById(R.id.etText);
     }
+
+
+
 }
