@@ -2,7 +2,9 @@ package com.example.firststephallapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -28,6 +30,11 @@ public class Singup extends AppCompatActivity
         etName=findViewById(R.id.etName);
         etRepassword=findViewById(R.id.etRepassword);
         etPhone=findViewById(R.id.etPhone);
-
+    }
+    public void onClickSingupToMainactivity (View v)
+    {
+        //to open new activity from current to next activity
+        Intent i= new Intent(Singup.this,  MainActivity.class);
+        startActivity(i);
     }
 }
