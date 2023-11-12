@@ -20,6 +20,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#03A9F4"
                 android:text="Save"
                 app:cornerRadius="30dp" />
 
@@ -28,6 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#03A9F4"
                 android:text="Cancel"
                 app:cornerRadius="30dp" />
 
@@ -62,6 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:backgroundTint="#00BCD4"
                 android:hint="ShortTitle" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -79,8 +82,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:hint="Text"
-                />
+                android:backgroundTint="#00BCD4"
+                android:hint="Text" />
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>

@@ -4,88 +4,96 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-<LinearLayout
-android:layout_width="409dp"
-android:layout_height="729dp"
-android:orientation="vertical">>
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal">
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:backgroundTint="#00BCD4"
+        android:orientation="vertical">>
 
-        <Button
-            android:id="@+id/btnUpdate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="0dp"
-            android:layout_weight="1"
-            android:text="Update"
-            app:cornerRadius="30dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btn3Cancel"
-            android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/btnUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:backgroundTint="#03A9F4"
+                android:text="Update"
+                app:cornerRadius="30dp" />
+
+            <Button
+                android:id="@+id/btn3Cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:backgroundTint="#03A9F4"
+                android:text="Cancel"
+                app:cornerRadius="30dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/etImportance"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="0dp"
-            android:layout_weight="1"
-            android:text="Cancel"
-            app:cornerRadius="30dp" />
+            android:layout_margin="8dp"
+            android:background="@color/white"
+            android:text="importance"
+            android:textSize="16sp" />
+
+        <SeekBar
+            android:id="@+id/skb"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#00BCD4"
+            android:max="5"
+            android:progress="1" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="8dp"
+            app:boxCornerRadiusBottomEnd="40dp"
+            app:boxCornerRadiusBottomStart="40dp"
+            app:boxCornerRadiusTopEnd="40dp"
+            app:boxCornerRadiusTopStart="40dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etShortTitle2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:backgroundTint="#00BCD4"
+                android:hint="ShortTitle" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="8dp"
+            app:boxCornerRadiusBottomEnd="40dp"
+            app:boxCornerRadiusBottomStart="40dp"
+            app:boxCornerRadiusTopEnd="40dp"
+            app:boxCornerRadiusTopStart="40dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etText2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:backgroundTint="#00BCD4"
+                android:hint="Texr" />
+        </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/etImportance"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="importance"
-        android:textSize="16sp" />
-
-    <SeekBar
-        android:id="@+id/skb"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:max="5"
-        android:progress="1" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="8dp"
-        app:boxCornerRadiusBottomEnd="40dp"
-        app:boxCornerRadiusBottomStart="40dp"
-        app:boxCornerRadiusTopEnd="40dp"
-        app:boxCornerRadiusTopStart="40dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etShortTitle2"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="ShortTitle" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="8dp"
-        app:boxCornerRadiusBottomEnd="40dp"
-        app:boxCornerRadiusBottomStart="40dp"
-        app:boxCornerRadiusTopEnd="40dp"
-        app:boxCornerRadiusTopStart="40dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etText2"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="Texr" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-</LinearLayout>
 
 
 

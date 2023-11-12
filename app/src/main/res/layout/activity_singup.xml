@@ -24,6 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:backgroundTint="#03A9F4"
                 android:text="SAVE"
                 app:cornerRadius="30dp" />
 
@@ -32,6 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:backgroundTint="#03A9F4"
                 android:text="cancel"
                 app:cornerRadius="30dp" />
 
@@ -46,6 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:backgroundTint="#00BCD4"
                 android:hint="E-mail" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -58,6 +61,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:backgroundTint="#00BCD4"
                 android:hint="password" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -70,6 +74,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:backgroundTint="#00BCD4"
                 android:hint="re-password" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -82,6 +87,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:backgroundTint="#00BCD4"
                 android:hint="name" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -94,6 +100,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:backgroundTint="#00BCD4"
                 android:hint="phone" />
         </com.google.android.material.textfield.TextInputLayout>
 
