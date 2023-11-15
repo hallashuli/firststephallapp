@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.firststephallapp.data.AppDatabase;
+import com.example.firststephallapp.data.myuser.MyUserQuery;
+import com.example.firststephallapp.data.myuser.Myuser;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -54,10 +57,25 @@ public class Singin extends AppCompatActivity {
         if (password.length()<8 || password.contains(" ")==true){
             isAllok=false;
             etPass.setError("worng password");
-        }
-        if (isAllok){
+        }//checkEmailPassw
+        if (isAllok)
+        {
             Toast.makeText(this, "All Ok", Toast.LENGTH_SHORT).show();
-        }
+            //بناء قاعدة بيانات و ارجاع المؤشر عليها
+            AppDatabase db=AppDatabase.getDB(getApplicationContext());
+            //مؤشر لكائن عمليات الجدول
+            MyUserQuery userQuery= db.getMyUserQuery();
+            //ان لم يكن موجود null استدعاء العملية التي تنفذ استعلام الذي يفحص البريد و كلمة المرور و يعيد كائنًاان كان موجود
+            Myuser myuser=userQuery.checkEmailPassw(email,password);
+            if (myuser==null)//هل لا يوجد كائن حسب الايميل و الباسورود
+                Toast.makeText(this, "worng email or worng password", Toast.LENGTH_SHORT).show();
+            else {//أن كان هنالك حساب حساب ايميل او باسورود ننتقل الى الشاشة الرئيسية
+                Intent i=new Intent(Singin.this,MainActivity.class);
+                startActivity(i);
+                finish();
+            }
+
+        }//if(isAllok)
 
     }
 
