@@ -39,7 +39,6 @@ public class Singin extends AppCompatActivity {
         ckeckEmailPassw();
 
     }
-
     private void ckeckEmailPassw() {
         boolean isAllok = true; // يحوي نتيجة فحص الحقول ان كانت  السليمة
         String email = etEmail.getText().toString();

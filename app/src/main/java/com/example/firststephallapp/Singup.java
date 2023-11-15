@@ -35,18 +35,16 @@ public class Singup extends AppCompatActivity
     }
     public void onClickSingupToMainactivity (View v)
     {
-        //to open new activity from current to next activity
-        Intent i= new Intent(Singup.this,  MainActivity.class);
-        startActivity(i);
+       CkeckDetials();
     }
     private void CkeckDetials () {
         boolean isAllok = true; // يحوي نتيجة فحص الحقول ان كانت  السليمة
         String email = etEmail2.getText().toString();
         //استخراج النص كلمة المرور
         String password=etPassword.getText().toString();
-        //
+        //استخراج نص الذي يحوي على الاسم
         String name = etName.getText().toString();
-        //
+        // استخراج النص الذي يحوي على كلمة المرور الجديدة
         String rePaswword=etRepassword.getText().toString();
         //فحص الايميل ان كان طوله اقل من 6 او لا يحوي على @ فهو خطأ
         if (email.length()<6 || email.contains("@")==false) {
@@ -55,12 +53,26 @@ public class Singup extends AppCompatActivity
             //عرض النتيجة خطأ في حقل الايميل
             etEmail2.setError("worng email");
         }
-        //
+        //فحص كلمة المرور اذا كانت اقل من 8 او تحتوي على فراغ
         if (password.length()<8 || password.contains(" ")==true){
-            //
+            //تعديل المتغير على ان يعطي نتيجة خاطئة
             isAllok=false;
-            //
+            //عرض نتيجة خطأ في حقل كلمة المرور
             etPassword.setError("worng password");
+        }
+        //فحص الاسم يجب ان لا يحتوي على اقل من 3 حروف
+        if (name.length()<3){
+            //تعديل المتغير على ان يعطي نتيجة خاطئة
+            isAllok=false;
+            //عرض نتيجة اسم خاطئ في حقل الاسم
+            etName.setError("worng name");
+        }
+        //فحص اذا كانت كلمة المرور الجديدة نفس الكلمة القديمة(لتأكيد كبمة المرور)
+        if (rePaswword.equals(password)== false) {
+            //تعديل المتغير على ان يعطي نتيجة خاطئة
+            isAllok=false;
+            //عرض نتيجة خطأ في الحقل
+            etRepassword.setError("worng password");
         }
 
         if (isAllok)
