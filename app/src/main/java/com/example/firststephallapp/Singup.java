@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.firststephallapp.data.AppDatabase;
+import com.example.firststephallapp.data.myuser.MyUserQuery;
+import com.example.firststephallapp.data.myuser.Myuser;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -77,7 +80,13 @@ public class Singup extends AppCompatActivity
 
         if (isAllok)
         {
-            Toast.makeText(this, "All Ok", Toast.LENGTH_SHORT).show();
+            AppDatabase dp=AppDatabase.getDB(getApplicationContext());
+            MyUserQuery userQuery=dp.getMyUserQuery();
+            //
+            if (userQuery.checkEmail(email)!=null)
+            {
+                etEmail2.setError("found Email");
+            }
         }
 
 
