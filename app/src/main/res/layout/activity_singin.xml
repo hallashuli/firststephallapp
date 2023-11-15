@@ -52,7 +52,7 @@
                 <Button
                     android:id="@+id/btnSingup"
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
+                    android:layout_height="76dp"
                     android:backgroundTint="#03A9F4"
                     android:onClick="onClickSinginToSingup"
                     android:text="SIGN UP "

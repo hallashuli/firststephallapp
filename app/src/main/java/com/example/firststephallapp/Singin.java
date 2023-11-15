@@ -41,11 +41,15 @@ public class Singin extends AppCompatActivity {
     }
 
     private void ckeckEmailPassw() {
-        boolean isAllok = true;
+        boolean isAllok = true; // يحوي نتيجة فحص الحقول ان كانت  السليمة
         String email = etEmail.getText().toString();
+        //استخراج النص كلمة المرور
         String password=etPass.getText().toString();
+        //فحص الايميل ان كان طوله اقل من 6 او لا يحوي على @ فهو خطأ
         if (email.length()<6 || email.contains("@")==false) {
+            // تعديل المتغير و يدل على انه فحص و يعطي نتيجة خاطئة
             isAllok = false;
+            //عرض النتيجة خطأ في حقل الايميل
             etEmail.setError("worng email");
         }
         if (password.length()<8 || password.contains(" ")==true){
