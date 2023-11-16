@@ -1,5 +1,4 @@
 package com.example.firststephallapp;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -38,7 +37,8 @@ public class Singup extends AppCompatActivity
     }
     public void onClickSingupToMainactivity (View v)
     {
-       CkeckDetials();
+
+        CkeckDetials();
     }
     private void CkeckDetials () {
         boolean isAllok = true; // يحوي نتيجة فحص الحقول ان كانت  السليمة
@@ -81,14 +81,24 @@ public class Singup extends AppCompatActivity
         if (isAllok)
         {
             AppDatabase dp=AppDatabase.getDB(getApplicationContext());
-            MyUserQuery userQuery=dp.getMyUserQuery();
-            //
-            if (userQuery.checkEmail(email)!=null)
+            MyUserQuery MyUserQuery=dp.getMyUserQuery();
+            //فحص هل البريد الالكتروني موجود من قبل
+            if (MyUserQuery.checkEmail(email)!=null)
             {
                 etEmail2.setError("found Email");
             }
+            else //ان لم يكن البريد موجودًا نقوم ببناء كائن للمستعمل وادخاله في الجدولMyuser المستعملين
+            {
+                //بناء كائن
+                Myuser myuser=new Myuser ();
+                //تحديد القيم الصفات بالقيم التي استخرجناها
+                myuser.email=email;
+                myuser.fullName=name;
+                myuser.passw=password;
+                //اضافة كائن الجديد في الجدول
+                MyUserQuery.insert(myuser);
+                //اغلاق الشاشة الحالية
+            }
         }
-
-
     }
 }
