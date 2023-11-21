@@ -98,6 +98,7 @@ public class Singup extends AppCompatActivity
                 //اضافة كائن الجديد في الجدول
                 MyUserQuery.insert(myuser);
                 //اغلاق الشاشة الحالية
+                finish();
             }
         }
     }

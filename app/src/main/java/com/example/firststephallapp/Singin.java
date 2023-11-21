@@ -31,16 +31,13 @@ public class Singin extends AppCompatActivity {
         btSignin = findViewById(R.id.btSignin);
         btSingup = findViewById(R.id.btnSingup);
     }
-
     public void onClickSinginToSingup(View v) {
         //to open new activity from current to next activity
         Intent i = new Intent(Singin.this, Singup.class);
         startActivity(i);
     }
-
     public void onClickSinginToMainactivity(View v) {
         ckeckEmailPassw();
-
     }
     private void ckeckEmailPassw() {
         boolean isAllok = true; // يحوي نتيجة فحص الحقول ان كانت  السليمة
