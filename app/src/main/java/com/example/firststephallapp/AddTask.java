@@ -3,6 +3,7 @@ package com.example.firststephallapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.SeekBar;
@@ -42,16 +43,30 @@ public class AddTask extends AppCompatActivity {
         etShortTitle=findViewById(R.id.etShortTitle);
         etText=findViewById(R.id.etText);
     }
+    /**
+     *استخراج اسماء المواضيع من جدول المواضيع وعرضه بالحقل من نوع
+     *AutoCompleteTextView
+     *طريقة التعامل مع شبيه "السبينير"
+     */
     private void initautoEtsubj()
     {
-        //
+        //مؤشر لقاعدة البيانات
         AppDatabase dp=AppDatabase.getDB(getApplicationContext());
-        //
+        //مؤشر لواجهة استعمالات جدول المواضيع
         MysubjectQuery mysubjectQuery=dp.getMySubjectQuery();
-        //
+        //مصدر المعطيات:استخراج جميع المعطيات \المواضيع من الجدول
         List<Mysubject>allSubjects=mysubjectQuery.getAllsubjects();
-        //
-        Arrays
+        //تجهيز الوسيط
+        ArrayAdapter<Mysubject>adapter =new ArrayAdapter<Mysubject>(this, android.R.layout.simple_dropdown_item_1line);
+        adapter.addAll(allSubjects);//اضافة المعلومات للوسيط
+        autoEtsubj.setAdapter(adapter);//ربط الحقل بالوسيط
+        //معالجة الحدث لعرض المواضيع عند الضغط على المواضيع
+        autoEtsubj.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                autoEtsubj.showDropDown();
+            }
+        });
     }
 
 
