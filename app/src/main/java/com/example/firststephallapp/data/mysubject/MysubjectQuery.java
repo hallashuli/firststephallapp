@@ -25,4 +25,5 @@ public interface MysubjectQuery
     /** */
     @Query("DELETE FROM mysubject WHERE keyid=:Kid")
     void deletsubject(long Kid);
+
 }

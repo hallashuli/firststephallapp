@@ -6,12 +6,14 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.firststephallapp.data.AppDatabase;
+import com.example.firststephallapp.data.matasck.Mytask;
 import com.example.firststephallapp.data.mysubject.Mysubject;
 import com.example.firststephallapp.data.mysubject.MysubjectQuery;
 import com.google.android.material.textfield.TextInputLayout;
@@ -19,13 +21,14 @@ import com.google.android.material.textfield.TextInputLayout;
 import java.util.Arrays;
 import java.util.List;
 
-public class AddTask extends AppCompatActivity {
+public class AddTask extends AppCompatActivity
+{
     private Button btn2Save;
     private Button btn2Cancel;
     private TextView etImportance;
     private SeekBar skb;
-    private TextInputLayout etShortTitle;
-    private TextInputLayout etText;
+    private EditText etShortTitle;
+    private EditText etText;
     private AutoCompleteTextView autoEtsubj;
 
     @Override
@@ -68,7 +71,53 @@ public class AddTask extends AppCompatActivity {
             }
         });
     }
+    private void checkShortTitleAndText()
+    {
+        boolean isAllOk=true; // يحوي نتيجة فحص الحقول ان كانت سليمة
+        String shortTitle=etShortTitle.getText().toString();
+        String text=etText.getText().toString();
+        String whichsubj=autoEtsubj.getText().toString();
+        int importancee=skb.getProgress();
+        if (shortTitle.length()<1)
+        {
+            isAllOk=false;
+            etShortTitle.setError("short title is empty");
+        }
+        if (text.length()<1)
+        {
+            isAllOk=false;
+            etText.setError("text is empty");
+        }
+        if (whichsubj.length()<1)
+        {
+            isAllOk=false;
+            autoEtsubj.setError("you didn't chose the subject");
+        }
+        if (isAllOk) {
+            AppDatabase dp = AppDatabase.getDB(getApplicationContext());
+            MysubjectQuery mysubjectQuery = dp.getMySubjectQuery();
+            if (mysubjectQuery.checkSubject(whichsubj) == null) // فحص هل الموضوع من قبل بالجدول
+            {//
+                //بناء موضوع جديد واضافته
+                Mysubject subject = new Mysubject();
+                subject.title = whichsubj;
+                mysubjectQuery.insertsubject(subject);
+            }
+            //استخراج id الموضوع لأننا بحاجة لرقمه التسلسلي
 
-
-
+            Mysubject subject = mysubjectQuery.checkSubject(whichsubj);
+            Mytask task = new Mytask();
+            task.inportance = importancee;
+            task.text = text;
+            task.shortTitle = shortTitle;
+            task.subid = subject.getKeyid();//تحديد رقم الموضوع للمهة
+            dp.getMyTaskQuery().insertTask(task);//اضافة المهمة للجدول
+            finish();
+        }
 }
+
+
+
+
+
+    }
