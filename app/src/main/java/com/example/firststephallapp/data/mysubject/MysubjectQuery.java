@@ -25,5 +25,8 @@ public interface MysubjectQuery
     /** */
     @Query("DELETE FROM mysubject WHERE keyid=:Kid")
     void deletsubject(long Kid);
+    /***/
+    @Query("SELECT * FROM Mysubject WHERE title = :whsubject")
+    Mysubject checkSubject(String whsubject);
 
 }

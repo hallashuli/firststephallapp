@@ -109,8 +109,7 @@ public class AddTask extends AppCompatActivity
             Mytask task = new Mytask();
             task.inportance = importancee;
             task.text = text;
-            task.shortTitle = shortTitle;
-            task.subid = subject.getKeyid();//تحديد رقم الموضوع للمهة
+            task.subjid = subject.getKeyid();//تحديد رقم الموضوع للمهة
             dp.getMyTaskQuery().insertTask(task);//اضافة المهمة للجدول
             finish();
         }
