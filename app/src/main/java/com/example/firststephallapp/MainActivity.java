@@ -6,6 +6,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 import com.example.firststephallapp.data.AppDatabase;
+import com.example.firststephallapp.data.matasck.Mytask;
+import com.example.firststephallapp.data.matasck.MytaskQuery;
 import com.example.firststephallapp.data.mysubject.Mysubject;
 import com.example.firststephallapp.data.mysubject.MysubjectQuery;
 import java.util.List;
@@ -81,15 +83,26 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
     }
     /**
-     *
+     *عملية تجهيز السبينير في المواضيع
      */
     private void initSubjectSpnr()
     {
-        AppDatabase dp=AppDatabase.getDB(getApplicationContext());//
-        MysubjectQuery mysubjectQuery=dp.getMySubjectQuery();//
-        List<Mysubject> allSubject=mysubjectQuery.getAllsubjects();//
-        //
-        ArrayAdapter<String> subjectAddapter=new ArrayAdapter<String>(this,)
+        AppDatabase dp=AppDatabase.getDB(getApplicationContext());//قاعدة بناء
+        MysubjectQuery mysubjectQuery=dp.getMySubjectQuery();//عمليات جدول المواضيع
+        List<Mysubject> allSubject=mysubjectQuery.getAllsubjects();//استخراج المواضيع
+        //تجهيز الوسيط
+        ArrayAdapter<String> subjectAddapter=new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line);//
+        subjectAddapter.add("All");//ستظهر اولًا بالسبنر تعني عرض جميع المهمات
+        for (Mysubject mysubject:allSubject){
+            subjectAddapter.add(mysubject.title);
+        }
+        spnrSubject.setAdapter(subjectAddapter);//ربط السبينر في الوسيط
+    }
+    /** */
+    private void initAllListView()
+    {
+        AppDatabase dp=AppDatabase.getDB(getApplicationContext());
+        MytaskQuery mytaskQuery=dp.getMyTaskQuery();
 
     }
 }
