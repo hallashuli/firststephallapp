@@ -103,6 +103,9 @@ public class MainActivity extends AppCompatActivity {
     {
         AppDatabase dp=AppDatabase.getDB(getApplicationContext());
         MytaskQuery mytaskQuery=dp.getMyTaskQuery();
+        List<Mytask> allTasks=mytaskQuery.getAllTasks();
+        ArrayAdapter<Mytask> mytaskArrayAdapter=new ArrayAdapter<Mytask>(this,android.R.layout.simple_dropdown_item_1line);
+
 
     }
 }
