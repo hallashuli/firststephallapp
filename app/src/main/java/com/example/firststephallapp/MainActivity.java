@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.PopupMenu;
 import android.widget.Spinner;
 import android.widget.Toast;
 import com.example.firststephallapp.data.AppDatabase;
@@ -66,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         Log.d("HL", "onCreate");
         Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
+
     }
     @Override
     protected void onPause() {
@@ -108,20 +111,36 @@ public class MainActivity extends AppCompatActivity {
         MytaskQuery mytaskQuery=dp.getMyTaskQuery();
         List<Mytask> allTasks=mytaskQuery.getAllTasks();
         ArrayAdapter<Mytask> mytaskArrayAdapter=new ArrayAdapter<Mytask>(this,android.R.layout.simple_dropdown_item_1line);
-
-
     }
 
     @Override//
     public boolean onCreateOptionsMenu(Menu menu)
     {
-        getMenuInflater().inflate(R.menu.options_menu,menu);
+        getMenuInflater().inflate(R.menu.main_menu,menu);
         return true;
     }
     @Override//
     public boolean onOptionsItemSelected(@NonNull MenuItem item)
     {
-        if (item.getItemId())
-
+        if (item.getItemId()==R.id.itmSetting)
+        {
+        }
+        if (item.getItemId()==R.id.itmSingout)
+        {
+        }
+        return true;
     }
+    /**
+     *
+     *
+     *
+     */
+    public void showMenu(View v)
+    {
+        //
+        PopupMenu popupMenu=new PopupMenu(this,v);//
+        //
+        popupMenu.inflate();
+    }
+
 }
