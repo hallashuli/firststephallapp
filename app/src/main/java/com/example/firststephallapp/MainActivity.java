@@ -7,7 +7,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.PopupMenu;
+import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.Toast;
 import com.example.firststephallapp.data.AppDatabase;
@@ -15,11 +17,15 @@ import com.example.firststephallapp.data.matasck.Mytask;
 import com.example.firststephallapp.data.matasck.MytaskQuery;
 import com.example.firststephallapp.data.mysubject.Mysubject;
 import com.example.firststephallapp.data.mysubject.MysubjectQuery;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.List;
 public class MainActivity extends AppCompatActivity {
     //spnr1 تعريف صفه للكائن المرئي
     private Spinner spnrSubject;
-
+    private ListView IstvTasks;
+    private SearchView srchV;
+    private FloatingActionButton fabadd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         Log.d("HL", "onCreate");
         Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
-
     }
     @Override
     protected void onPause() {
@@ -104,13 +109,15 @@ public class MainActivity extends AppCompatActivity {
         }
         spnrSubject.setAdapter(subjectAddapter);//ربط السبينر في الوسيط
     }
-    /** */
+    /**ListViewتجهيز قائمة جميع المهمات و عرضها ب  */
     private void initAllListView()
     {
         AppDatabase dp=AppDatabase.getDB(getApplicationContext());
         MytaskQuery mytaskQuery=dp.getMyTaskQuery();
         List<Mytask> allTasks=mytaskQuery.getAllTasks();
         ArrayAdapter<Mytask> mytaskArrayAdapter=new ArrayAdapter<Mytask>(this,android.R.layout.simple_dropdown_item_1line);
+        mytaskArrayAdapter.addAll(allTasks);
+        IstvTasks.setAdapter(mytaskArrayAdapter);
     }
 
     @Override//
