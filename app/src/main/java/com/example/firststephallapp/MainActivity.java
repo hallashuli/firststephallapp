@@ -119,7 +119,14 @@ public class MainActivity extends AppCompatActivity {
         mytaskArrayAdapter.addAll(allTasks);
         IstvTasks.setAdapter(mytaskArrayAdapter);
     }
-
+    /**
+    *تجهيز قائمة المهمات حسب رقم الموضوع
+    * @param key_id  رقم الموضوع
+    * */
+    private void initListViewBySubjid(long key_id)
+    {
+        AppDatabase dp=AppDatabase.getDB()
+    }
     @Override//
     public boolean onCreateOptionsMenu(Menu menu)
     {
