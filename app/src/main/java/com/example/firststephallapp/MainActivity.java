@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.PopupMenu;
@@ -108,6 +109,25 @@ public class MainActivity extends AppCompatActivity {
             subjectAddapter.add(mysubject.title);
         }
         spnrSubject.setAdapter(subjectAddapter);//ربط السبينر في الوسيط
+        //
+        spnrSubject.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                //
+                String item=subjectAddapter.getItem(i);
+                if (item.equals("All"))//
+                    initAllListView();
+                else {
+                    //
+                    Mysubject mysubject=mysubjectQuery.checkSubject(item);
+                    //
+                    initListViewBySubjid(mysubject.getKeyid());
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?>adapterView){
+            }
+        });
     }
     /**ListViewتجهيز قائمة جميع المهمات و عرضها ب  */
     private void initAllListView()
@@ -125,8 +145,34 @@ public class MainActivity extends AppCompatActivity {
     * */
     private void initListViewBySubjid(long key_id)
     {
-        AppDatabase dp=AppDatabase.getDB()
+        AppDatabase dp=AppDatabase.getDB(getApplicationContext());
+        MytaskQuery mytaskQuery= dp.getMyTaskQuery();
+        //
+        List<Mytask> allTasks=mytaskQuery.getTasksBySubjid(key_id);
+        ArrayAdapter<Mytask> mytaskArrayAdapter=new ArrayAdapter<Mytask>(this,android.R.layout.simple_list_item_1);
+        mytaskArrayAdapter.addAll(allTasks);
+        IstvTasks.setAdapter(mytaskArrayAdapter);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     @Override//
     public boolean onCreateOptionsMenu(Menu menu)
     {

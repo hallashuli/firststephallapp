@@ -26,5 +26,8 @@ public interface MytaskQuery {
     void deletTask(Mytask... task);
     @Query("DELETE FROM mytask WHERE koyld=:Kid")
     void deletTask(long Kid);
+    @Query("SELECT * FROM Mytask WHERE subjid:subj_id  "+
+            "ORDER BY importance DESC")
+    List<Mytask> getTasksBySubjid(long subj_id);
 
 }
