@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -74,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         Log.d("HL", "onCreate");
+        initSubjectSpnr();
         Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
     }
     @Override
@@ -110,13 +112,16 @@ public class MainActivity extends AppCompatActivity {
         }
         spnrSubject.setAdapter(subjectAddapter);//ربط السبينر في الوسيط
         //
-        spnrSubject.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        spnrSubject.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void OnItemSelected(AdapterView<?> adapterView,View view,int i,long l){
+        {
                 //
                 String item=subjectAddapter.getItem(i);
                 if (item.equals("All"))//
+                {
                     initAllListView();
+                }
                 else {
                     //
                     Mysubject mysubject=mysubjectQuery.checkSubject(item);
