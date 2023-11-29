@@ -1,6 +1,8 @@
 package com.example.firststephallapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -160,14 +162,14 @@ public class MainActivity extends AppCompatActivity {
         IstvTasks.setAdapter(mytaskArrayAdapter);
     }
 
-    @Override//
-    public boolean onCreateOptionsMenu(Menu menu)
+    @Override//بناء قائمة
+    public boolean onCreateOptionsMenu(Menu menu)// دهس عملية بناء الثائمة (من دوال دورة الحياة النشاط)
     {
         getMenuInflater().inflate(R.menu.main_menu,menu);
         return true;
     }
-    @Override//
-    public boolean onOptionsItemSelected(@NonNull MenuItem item)
+    @Override//معالجة حدث اختيار العنصر
+    public boolean onOptionsItemSelected(@NonNull MenuItem item)//دهس العملية معالجة حدث اختيار القائمة
     {
         if (item.getItemId()==R.id.itmSetting)
         {
@@ -175,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
         if (item.getItemId()==R.id.itmSingout)
         {
         }
-        return true;
+        return true;//تم البناء بنجاح
     }
     /**
      *

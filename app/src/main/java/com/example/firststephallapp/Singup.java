@@ -37,8 +37,15 @@ public class Singup extends AppCompatActivity
     }
     public void onClickSingupToMainactivity (View v)
     {
-
         CkeckDetials();
+        Intent i=new Intent(Singup.this,MainActivity.class);
+        startActivity(i);
+        finish();
+    }
+    public void onClickCancelADD(View v){
+        Intent i=new Intent(Singup.this,Singin.class);
+        startActivity(i);
+        finish();
     }
     private void CkeckDetials () {
         boolean isAllok = true; // يحوي نتيجة فحص الحقول ان كانت  السليمة

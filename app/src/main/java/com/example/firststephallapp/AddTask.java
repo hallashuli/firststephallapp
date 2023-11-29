@@ -71,6 +71,16 @@ public class AddTask extends AppCompatActivity
             }
         });
     }
+    public void onClicksaveTask (View v)
+    {
+        checkShortTitleAndText();
+        //to open new activity from current to next activity
+        Intent i= new Intent(AddTask.this,   MainActivity.class);
+        startActivity(i);
+    }
+    public void onClickcanceladdtask (View v) {
+        finish();
+    }
     private void checkShortTitleAndText()
     {
         boolean isAllOk=true; // يحوي نتيجة فحص الحقول ان كانت سليمة
