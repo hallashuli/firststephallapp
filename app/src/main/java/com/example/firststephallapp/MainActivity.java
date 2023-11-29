@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private FloatingActionButton fabadd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        fabadd=findViewById(R.id.fabadd);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //spnr2 وضع مؤشر الصفه على الكائن المرئي الموجود بواجهه المستعمل
