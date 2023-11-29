@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d("HL", "onCreate");
         initSubjectSpnr();
         Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
+        initAllListView();
     }
     @Override
     protected void onPause() {
@@ -159,25 +160,6 @@ public class MainActivity extends AppCompatActivity {
         IstvTasks.setAdapter(mytaskArrayAdapter);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     @Override//
     public boolean onCreateOptionsMenu(Menu menu)
     {
@@ -205,7 +187,8 @@ public class MainActivity extends AppCompatActivity {
         //
         PopupMenu popupMenu=new PopupMenu(this,v);//
         //
-        popupMenu.inflate();
+        popupMenu.inflate(R.menu.popup_menu);
+        popupMenu.show();
     }
 
 }
