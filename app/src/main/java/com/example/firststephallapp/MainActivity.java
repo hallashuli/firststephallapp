@@ -114,25 +114,25 @@ public class MainActivity extends AppCompatActivity {
         //
         spnrSubject.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void OnItemSelected(AdapterView<?> adapterView,View view,int i,long l){
-        {
-                //
-                String item=subjectAddapter.getItem(i);
-                if (item.equals("All"))//
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                //استخراج الموضوع حسب رقمه الترتيبي i
+              String item=subjectAddapter.getItem(i);
+                if (item.equals("All"))//  الكلمة ALL تعني عرض جميع المهمات
                 {
                     initAllListView();
                 }
-                else {
+                else
+                {
+                    Mysubject subject=mysubjectQuery.checkSubject(item);
                     //
-                    Mysubject mysubject=mysubjectQuery.checkSubject(item);
-                    //
-                    initListViewBySubjid(mysubject.getKeyid());
+                    initListViewBySubjid(subject.getKeyid());
                 }
             }
             @Override
-            public void onNothingSelected(AdapterView<?>adapterView){
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
             }
-        });
+  });
     }
     /**ListViewتجهيز قائمة جميع المهمات و عرضها ب  */
     private void initAllListView()
