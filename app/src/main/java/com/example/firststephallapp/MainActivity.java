@@ -33,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         fabadd=findViewById(R.id.fabadd);
+        fabadd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(MainActivity.this,AddTask.class);
+                startActivity(i);
+                finish();
+            }
+        });
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //spnr2 وضع مؤشر الصفه على الكائن المرئي الموجود بواجهه المستعمل
