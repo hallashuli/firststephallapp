@@ -35,12 +35,10 @@ public class Singup extends AppCompatActivity
         etRepassword=findViewById(R.id.etRepassword);
         etPhone=findViewById(R.id.etPhone);
     }
-    public void onClickSingupToMainactivity (View v)
+    public void onClickSingupToSingin (View v)
     {
         CkeckDetials();
-        Intent i=new Intent(Singup.this,MainActivity.class);
-        startActivity(i);
-        finish();
+
     }
     public void onClickCancelADD(View v){
         Intent i=new Intent(Singup.this,Singin.class);

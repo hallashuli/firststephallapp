@@ -1,5 +1,4 @@
 package com.example.firststephallapp;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -20,7 +19,6 @@ import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.Arrays;
 import java.util.List;
-
 public class AddTask extends AppCompatActivity
 {
     private Button btn2Save;

@@ -25,7 +25,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:backgroundTint="#03A9F4"
-                android:onClick="onClickSingupToMainactivity"
+                android:onClick="onClickSingupToSingin"
                 android:text="SAVE"
                 app:cornerRadius="30dp" />
 

@@ -54,27 +54,27 @@ public class MainActivity extends AppCompatActivity {
         adapter.addAll(ar);
         //spnr6ربط الكائن المرئي بالوسيط
         spnrSubject.setAdapter(adapter);
-        Log.d("HL", "onCreate");
-        Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
-        //ناء قاعدة بيانات و ارجاع مؤشر عليها
-        AppDatabase db = AppDatabase.getDB(getApplicationContext());
-        //مؤشر للجدول
-        MysubjectQuery mysubjectQuery = db.getMySubjectQuery();
-        //بناء كائن من نوع الجدول و تحديد قيم الصفات
-        Mysubject s1 = new Mysubject();
-        s1.setTitle("Math");
-        Mysubject s2 = new Mysubject();
-        s2.title = "computer";
-        //اضافة كائن للجدول
-        mysubjectQuery.insertsubject(s1);
-        mysubjectQuery.insertsubject(s2);
-        //قحص هل تم حفظ ما سبق
-        // استخراج و طباعة جميع معطيات الجدول المواضيع
-        List<Mysubject> allsubjects = mysubjectQuery.getAllsubjects();
-        for (Mysubject s : allsubjects) {
-            Log.d("halla", s.title);
-            Toast.makeText(this, s.title, Toast.LENGTH_SHORT).show();
-        }
+//        Log.d("HL", "onCreate");
+//        Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
+//        //ناء قاعدة بيانات و ارجاع مؤشر عليها
+//        AppDatabase db = AppDatabase.getDB(getApplicationContext());
+//        //مؤشر للجدول
+//        MysubjectQuery mysubjectQuery = db.getMySubjectQuery();
+//        //بناء كائن من نوع الجدول و تحديد قيم الصفات
+//        Mysubject s1 = new Mysubject();
+//        s1.setTitle("Math");
+//        Mysubject s2 = new Mysubject();
+//        s2.title = "computer";
+//        //اضافة كائن للجدول
+//        mysubjectQuery.insertsubject(s1);
+//        mysubjectQuery.insertsubject(s2);
+//        //قحص هل تم حفظ ما سبق
+//        // استخراج و طباعة جميع معطيات الجدول المواضيع
+//        List<Mysubject> allsubjects = mysubjectQuery.getAllsubjects();
+//        for (Mysubject s : allsubjects) {
+//            Log.d("halla", s.title);
+//            Toast.makeText(this, s.title, Toast.LENGTH_SHORT).show();
+//        }
     }
     @Override
     protected void onRestart() {
@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
             subjectAddapter.add(mysubject.title);
         }
         spnrSubject.setAdapter(subjectAddapter);//ربط السبينر في الوسيط
-        //
+        //معالجة حدث لاختيار موضوع بالسبنر
         spnrSubject.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
                 else
                 {
                     Mysubject subject=mysubjectQuery.checkSubject(item);
-                    //
+                    //id استدعاء العمليةالتي تجهز القائمة حسب الموضوع
                     initListViewBySubjid(subject.getKeyid());
                 }
             }
