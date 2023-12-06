@@ -156,6 +156,12 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<Mytask> mytaskArrayAdapter=new ArrayAdapter<Mytask>(this,android.R.layout.simple_dropdown_item_1line);
         mytaskArrayAdapter.addAll(allTasks);
         IstvTasks.setAdapter(mytaskArrayAdapter);
+        IstvTasks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override //رقم العنصر الذي سبب الحدث i
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                ShowPoupMenu(view,mytaskArrayAdapter.getItem(i));//رقم العنصر الذي يسبب الحرث i
+            }
+        });
     }
     /**
     *تجهيز قائمة المهمات حسب رقم الموضوع
@@ -193,19 +199,20 @@ public class MainActivity extends AppCompatActivity {
      *دالة مساعدة لفتح قائمة تتلقى
      *برامتر للكائن الذي سبب فتح قائمة
      * @param v
+     * @param item
      */
     public void ShowPoupMenu(View v,Mytask item)
     {
         //popup menu بناء قائمة
-        PopupMenu popupMenu=new PopupMenu(this,v);//
+        PopupMenu popupMenu=new PopupMenu(this,v);//الكائن الذي سبب فتح القائمة v
         //ملف القائمة
         popupMenu.inflate(R.menu.popup_menu);
-        //
+        //اضافة معالج دث عنصر لاختيار عنصر من القائمة
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
                 if (menuItem.getItemId() == R.id.edit) {
-                    //
+                    //هنا نكتب رد فعل لاختيار هذا العنصر من القائمة
                     Toast.makeText(MainActivity.this, "ADD", Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(MainActivity.this, AddTask.class);
                     startActivity(i);
@@ -219,7 +226,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-        popupMenu.show();
+        popupMenu.show();//فتح و عرض القائمة
     }
 
 
