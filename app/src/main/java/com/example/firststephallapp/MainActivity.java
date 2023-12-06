@@ -1,5 +1,6 @@
 package com.example.firststephallapp;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -227,6 +228,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         popupMenu.show();//فتح و عرض القائمة
+    }
+    /**
+     * بناء ديالوج
+     */
+    public void showYesNoDialog()
+    {
+        //تجهيز بناء شباك حوار ديالوج يتلقى برامتر مؤشر للنشاط (اكتفتي) الحالي
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        builder.setTitle("Log Out");//تحديد العنوان
+        builder.setMessage("Are you sure?");//تحدي فحوى شباك الحوار
+        AlertDialog dialog=builder.create();//بناء شباك الحوار ديالوغ
+        dialog.show();//عرض الشباك
     }
 
 
