@@ -213,10 +213,14 @@ public class MainActivity extends AppCompatActivity {
                 if (menuItem.getItemId() == R.id.delete) {
                     Toast.makeText(MainActivity.this, "Delete", Toast.LENGTH_SHORT).show();
                 }
+                if (menuItem.getItemId() == R.id.com) {
+                    Toast.makeText(MainActivity.this, "Complete", Toast.LENGTH_SHORT).show();
+                }
                 return true;
             }
         });
         popupMenu.show();
     }
+
 
 }
