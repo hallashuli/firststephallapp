@@ -41,8 +41,6 @@ public class Singup extends AppCompatActivity
 
     }
     public void onClickCancelADD(View v){
-        Intent i=new Intent(Singup.this,Singin.class);
-        startActivity(i);
         finish();
     }
     private void CkeckDetials () {

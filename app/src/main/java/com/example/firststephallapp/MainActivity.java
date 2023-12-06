@@ -3,6 +3,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -189,16 +190,32 @@ public class MainActivity extends AppCompatActivity {
         return true;//تم البناء بنجاح
     }
     /**
-     *
-     *
-     *
+     *دالة مساعدة لفتح قائمة تتلقى
+     *برامتر للكائن الذي سبب فتح قائمة
+     * @param v
      */
-    public void showMenu(View v)
+    public void ShowPoupMenu(View v,Mytask item)
     {
-        //
+        //popup menu بناء قائمة
         PopupMenu popupMenu=new PopupMenu(this,v);//
-        //
+        //ملف القائمة
         popupMenu.inflate(R.menu.popup_menu);
+        //
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                if (menuItem.getItemId() == R.id.edit) {
+                    //
+                    Toast.makeText(MainActivity.this, "ADD", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(MainActivity.this, AddTask.class);
+                    startActivity(i);
+                }
+                if (menuItem.getItemId() == R.id.delete) {
+                    Toast.makeText(MainActivity.this, "Delete", Toast.LENGTH_SHORT).show();
+                }
+                return true;
+            }
+        });
         popupMenu.show();
     }
 
