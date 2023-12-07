@@ -37,9 +37,11 @@ public class Singin extends AppCompatActivity {
         startActivity(i);
     }
     public void onClickSinginToMainactivity(View v) {
+
         ckeckEmailPassw();
     }
-    private void ckeckEmailPassw() {
+    private void ckeckEmailPassw()
+    {
         boolean isAllok = true; // يحوي نتيجة فحص الحقول ان كانت  السليمة
         String email = etEmail.getText().toString();
         //استخراج النص كلمة المرور

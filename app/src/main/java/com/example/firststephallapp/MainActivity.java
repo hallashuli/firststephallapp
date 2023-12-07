@@ -174,7 +174,6 @@ public class MainActivity extends AppCompatActivity {
     {
         AppDatabase dp=AppDatabase.getDB(getApplicationContext());
         MytaskQuery mytaskQuery= dp.getMyTaskQuery();
-        //
         List<Mytask> allTasks=mytaskQuery.getTasksBySubjid(key_id);
         ArrayAdapter<Mytask> mytaskArrayAdapter=new ArrayAdapter<Mytask>(this,android.R.layout.simple_list_item_1);
         mytaskArrayAdapter.addAll(allTasks);
@@ -263,7 +262,4 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog dialog=builder.create();//بناء شباك الحوار ديالوغ
         dialog.show();//عرض الشباك
     }
-
-
-
 }
