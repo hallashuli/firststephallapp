@@ -241,13 +241,25 @@ public class MainActivity extends AppCompatActivity {
         builder.setMessage("Are you sure?");//تحدي فحوى شباك الحوار
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
+            //نضغط على زر و معالج الحدث
             public void onClick(DialogInterface dialogInterface, int i) {
-
+                //معالجة حدث للمرافقة
+                Toast.makeText(MainActivity.this, "Sing Out", Toast.LENGTH_SHORT).show();
+                finish();
             }
-        })
+        });
+        //
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                //
+                Toast.makeText(MainActivity.this, "Sing Out", Toast.LENGTH_SHORT).show();
+            }
+        });
         AlertDialog dialog=builder.create();//بناء شباك الحوار ديالوغ
         dialog.show();//عرض الشباك
     }
+
 
 
 }
