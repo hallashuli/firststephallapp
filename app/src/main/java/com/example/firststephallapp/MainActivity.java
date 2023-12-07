@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
         initSubjectSpnr();
         Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
         initAllListView();
+
     }
     @Override
     protected void onPause() {
@@ -191,9 +192,12 @@ public class MainActivity extends AppCompatActivity {
     {
         if (item.getItemId()==R.id.itmSetting)
         {
+            Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show();
         }
         if (item.getItemId()==R.id.itmSingout)
         {
+            Toast.makeText(this, "Signout", Toast.LENGTH_SHORT).show();
+            showYesNoDialog();
         }
         return true;//تم البناء بنجاح
     }
@@ -248,11 +252,11 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
-        //
+        ////ضغط على زر معالج الحدث
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                //
+                //معالجة حدث للمرافقة
                 Toast.makeText(MainActivity.this, "Sing Out", Toast.LENGTH_SHORT).show();
             }
         });
