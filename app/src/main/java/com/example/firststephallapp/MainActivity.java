@@ -80,13 +80,15 @@ public class MainActivity extends AppCompatActivity {
 //        }
     }
     @Override
-    protected void onRestart() {
+    protected void onRestart() //يتم استدعاء هذه الحالة عندما يكون النشاط على وشك أن يصبح مرئيًا للمستخدم. في هذه الحالة، يجب على النشاط بدء أي رسوم متحركة أو عمليات أخرى يحتاج إلى تشغيلها أثناء رؤيته.
+    {
         super.onRestart();
         Log.d("HL", "onCreate");
         Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
     }
     @Override
-    protected void onResume() {
+    protected void onResume() //يتم استدعاء هذه الحالة عندما يكون النشاط قد أصبح مرئيًا للمستخدم وهو الآن في المقدمة. في هذه الحالة، يجب على النشاط بدء التفاعل مع المستخدم.
+    {
         super.onResume();
         Log.d("HL", "onCreate");
         initSubjectSpnr();
@@ -95,19 +97,22 @@ public class MainActivity extends AppCompatActivity {
 
     }
     @Override
-    protected void onPause() {
+    protected void onPause() //يتم استدعاء هذه الحالة عندما يكون النشاط على وشك فقدان التركيز والانتقال إلى الخلفية. في هذه الحالة، يجب على النشاط إيقاف أي رسوم متحركة أو عمليات أخرى لا يحتاج إلى تشغيلها أثناء وجوده في الخلفية.
+    {
         super.onPause();
         Log.d("HL", "onCreate");
         Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
     }
     @Override
-    protected void onStart() {
+    protected void onStart()
+    {
         super.onStart();
         Log.d("HL", "onCreate");
         Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
     }
     @Override
-    protected void onStop() {
+    protected void onStop() //يتم استدعاء هذه الحالة عندما يكون النشاط قد فقد التركيز وهو الآن في الخلفية. في هذه الحالة، يجب على النشاط إيقاف التفاعل مع المستخدم.
+    {
         super.onStop();
         Log.d("HL", "onCreate");
         Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
