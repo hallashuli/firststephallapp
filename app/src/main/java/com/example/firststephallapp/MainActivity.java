@@ -2,7 +2,6 @@ package com.example.firststephallapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -25,7 +24,6 @@ import com.example.firststephallapp.data.matasck.MytaskQuery;
 import com.example.firststephallapp.data.mysubject.Mysubject;
 import com.example.firststephallapp.data.mysubject.MysubjectQuery;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 import java.util.List;
 public class MainActivity extends AppCompatActivity {
     //spnr1 تعريف صفه للكائن المرئي
@@ -37,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         fabadd=findViewById(R.id.fabadd);
-        fabadd.setOnClickListener(new View.OnClickListener() {
+        fabadd.setOnClickListener(new View.OnClickListener (){
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(MainActivity.this,AddTask.class);
