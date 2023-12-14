@@ -161,14 +161,20 @@ public class MainActivity extends AppCompatActivity {
         List<Mytask> allTasks=mytaskQuery.getAllTasks();
         ArrayAdapter<Mytask> mytaskArrayAdapter=new ArrayAdapter<Mytask>(this,android.R.layout.simple_dropdown_item_1line);
         mytaskArrayAdapter.addAll(allTasks);
-        IstvTasks.setAdapter(mytaskArrayAdapter);
+        IstvTasks.setAdapter( mytaskArrayAdapter);
         IstvTasks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override //رقم العنصر الذي سبب الحدث i
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 ShowPoupMenu(view,mytaskArrayAdapter.getItem(i));//رقم العنصر الذي يسبب الحرث i
             }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
         });
     }
+
+
     /**
     *تجهيز قائمة المهمات حسب رقم الموضوع
     * @param key_id  رقم الموضوع
