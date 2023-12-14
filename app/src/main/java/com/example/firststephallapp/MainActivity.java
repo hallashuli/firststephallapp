@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main); // ربط بين ملف الجافا وواجهة التطبيق و ايضَا بناء كائن
         fabadd=findViewById(R.id.fabadd);
         fabadd.setOnClickListener(new View.OnClickListener (){
             @Override
@@ -43,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
-        setContentView(R.layout.activity_main);
         //spnr2 وضع مؤشر الصفه على الكائن المرئي الموجود بواجهه المستعمل
         spnrSubject = findViewById(R.id.spnrSubject);
         //spnr3 بناء الوسيط وتحديد واجهه تنسيق لمعطى واحد
