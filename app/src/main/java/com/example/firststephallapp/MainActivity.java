@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main); // ربط بين ملف الجافا وواجهة التطبيق و ايضَا بناء كائن
         fabadd=findViewById(R.id.fabadd);
+        IstvTasks=findViewById(R.id.IstvTasks);
         fabadd.setOnClickListener(new View.OnClickListener (){
             @Override
             public void onClick(View view) {
@@ -166,10 +167,6 @@ public class MainActivity extends AppCompatActivity {
             @Override //رقم العنصر الذي سبب الحدث i
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 ShowPoupMenu(view,mytaskArrayAdapter.getItem(i));//رقم العنصر الذي يسبب الحرث i
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
             }
         });
     }
