@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "316990481725",
+    "project_id": "firststephallapp",
+    "storage_bucket": "firststephallapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:316990481725:android:42ea891d38e014adf05154",
+        "android_client_info": {
+          "package_name": "com.example.firststephallapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmiBy4YCuzgVyIV8lZHoUk5kNnocycKKs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

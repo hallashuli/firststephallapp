@@ -12,8 +12,8 @@ import com.example.firststephallapp.data.mysubject.MysubjectQuery;
 
 
     /*** تعريف الجداول و رقم النسخة version عند تغيير اي شيء يخص جدول او جداول علينا تغيير رقم الاصدار ليتم بناء قاعدة البيانات من جديد */
-    @Database(entities = {Myuser.class, Mysubject.class, Mytask.class}, version =2)
-    /*** الفئة المسؤلة عن بناء قاعدة بيانات و توفر لناكائن للتعامل مع قاعدة البيانات*/
+/*** الفئة المسؤلة عن بناء قاعدة بيانات و توفر لناكائن للتعامل مع قاعدة البيانات*/
+@Database(entities = {Myuser.class, Mysubject.class, Mytask.class}, version =2,exportSchema = false)
     public  abstract  class AppDatabase extends RoomDatabase {
         /*** كائن للتعامل مع قاعدة البيانات*/
         private static AppDatabase db;
