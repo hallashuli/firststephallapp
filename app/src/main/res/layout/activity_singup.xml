@@ -25,7 +25,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:backgroundTint="#03A9F4"
-                android:onClick="onClickSingupToSingin"
+                android:onClick="onClickSingupToSinginFireBace"
                 android:text="SAVE"
                 app:cornerRadius="30dp" />
 
@@ -35,7 +35,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:backgroundTint="#03A9F4"
-                android:onClick="onClickCancelADD"
+                android:onClick="onClickCancelADDFireBace"
                 android:text="cancel"
                 app:cornerRadius="30dp" />
 

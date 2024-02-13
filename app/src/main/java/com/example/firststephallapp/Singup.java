@@ -43,7 +43,6 @@ public class Singup extends AppCompatActivity
     public void onClickSingupToSingin (View v)
     {
         CkeckDetials();
-
     }
     public void onClickCancelADD(View v){
         finish();
@@ -112,7 +111,8 @@ public class Singup extends AppCompatActivity
     }
 
 //FireBase
-    private void checkAndSignUP_FB () {
+    private void checkAndSignUP_FB ()
+    {
         boolean isAllok = true; // يحوي نتيجة فحص الحقول ان كانت  السليمة
         String email = etEmail2.getText().toString();
         //استخراج النص كلمة المرور
@@ -149,7 +149,6 @@ public class Singup extends AppCompatActivity
             //عرض نتيجة خطأ في الحقل
             etRepassword.setError("worng password");
         }
-
         if (isAllok)
         {
             //كائن لعملية تسجيل
@@ -160,16 +159,22 @@ public class Singup extends AppCompatActivity
                 public void onComplete(@NonNull Task<AuthResult> task) // הפרמטר מכיל מידע מהשרת על תוצאת הבקשה לרישום
                 {
                     if (task.isSuccessful()){//
-                        Toast.makeText(Singup.this, "", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Singup.this, "Signing up Succeeded", Toast.LENGTH_SHORT).show();
                         finish();
                     }
                     else {
-                        Toast.makeText(Singup.this, "", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Singup.this, "Signing up Failed", Toast.LENGTH_SHORT).show();
+                        etEmail2.setError(task.getException().getMessage());//
                     }
-
                 }
             });
 
         }
+    }
+    public void onClickSingupToSinginFireBace(View v) {
+        checkAndSignUP_FB();
+    }
+    public void onClickCancelADDFireBace(View v){
+        finish();
     }
 }
